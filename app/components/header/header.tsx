@@ -5,16 +5,16 @@ import menu from "../../../public/assets/icons/menu.svg";
 
 export default function Header() {
   return (
-    <header className="z-30 flex justify-between bg-indigo-400 drop-shadow-lg">
+    <header className="z-30 absolute left-0 right-0 flex justify-between bg-indigo-400 drop-shadow-lg">
       <div className="flex gap-6 p-3">
         <button>
           <Image src={addNewCard} alt="Add New Card" />
         </button>
-        <p className="font-montserrat">Kanban Board</p>
+        <p className="font-montserrat text-base">Kanban Board</p>
       </div>
       <div className="flex gap-6 p-3">
         <button className="flex gap-3">
-          <p className="font-montserrat">Login</p>
+          <p className="font-montserrat text-base">Login</p>
           <Image src={profile} alt="Profile" />
         </button>
         <button>

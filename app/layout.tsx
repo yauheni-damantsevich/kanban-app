@@ -1,4 +1,5 @@
 import Header from "./components/header/header";
+import SelectedCards from "./components/selected-cards/selected-cards";
 import Sidebar from "./components/sidebar/sidebar";
 import "./globals.css";
 
@@ -18,6 +19,7 @@ export default function RootLayout({
         <Header />
         <Sidebar />
         <main>{children}</main>
+        <SelectedCards />
       </body>
     </html>
   );
