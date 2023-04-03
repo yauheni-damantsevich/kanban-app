@@ -1,0 +1,64 @@
+{
+  "columns": [
+    {
+      "id": "0",
+      "title": "Planned"
+    },
+    {
+      "id": "1",
+      "title": "In Progress"
+    },
+    {
+      "id": "2",
+      "title": "In Testing"
+    },
+    {
+      "id": "3",
+      "title": "Done"
+    }
+  ],
+  "rows": [
+    {
+      "id": "0",
+      "title": "Expedite"
+    },
+    {
+      "id": "1",
+      "title": "Standard"
+    },
+    {
+      "id": "2",
+      "title": "Fixed Date"
+    },
+    {
+      "id": "3",
+      "title": "Intangible"
+    }
+  ],
+  "cards": [
+    {
+      "id": "0",
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "status": "Planned",
+      "state": "Standard",
+      "tags": ["Lorem"],
+      "priority": "High",
+      "tasks": [
+        {
+          "id": "0",
+          "title": "Lorem Ipsum"
+        }
+      ],
+      "comments": [
+        {
+          "id": "0",
+          "title": "Lorem Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "author": "John Doe",
+          "date": "2021-01-01T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
