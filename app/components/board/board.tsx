@@ -2,6 +2,8 @@ import fs from "fs";
 import TableHeaderFirst from "../table-header-first/table-header-first";
 import TableHeader from "../table-header/table-header";
 import TableHeaderRow from "../table-header-row/table-header-row";
+import { ICard } from "./board.types";
+import Card from "../card/card";
 
 export default function Board() {
   const fixedTitle = "Class of Service / State";
@@ -36,8 +38,28 @@ export default function Board() {
                 return (
                   <td
                     id={`${data.rows[0].title}-${data.columns[index]?.title}`}
-                    className="border border-solid border-gray-400 text-sm font-montserrat font-normal"
-                  ></td>
+                    className="bg-gray-100 border border-solid border-gray-400 text-sm font-montserrat font-normal"
+                  >
+                    {data.cards
+                      ? data.cards.map((card: ICard) =>
+                          card.state === data.rows[0].title &&
+                          card.status === data.columns[index]?.title ? (
+                            <Card
+                              id={card.id}
+                              title={card.title}
+                              description={card.description}
+                              status={card.status}
+                              state={card.state}
+                              tags={card.tags}
+                              priority={card.priority}
+                              created={card.created}
+                              tasks={card.tasks}
+                              comments={card.comments}
+                            />
+                          ) : null
+                        )
+                      : null}
+                  </td>
                 );
               }
             )}
