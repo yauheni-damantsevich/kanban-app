@@ -1,10 +1,8 @@
-import fs from "fs";
-import { ICard } from "../board/board.types";
-import { ITag } from "./card.types";
+import { ICard, ITag } from "../board/board.types";
 import Link from "next/link";
 
 export default function Card(card: ICard) {
-  const data = JSON.parse(fs.readFileSync("./public/assets/data.json", "utf8"));
+  const tagData = card.tagData;
 
   return (
     <div className="w-fit m-2 flex flex-col gap-2 bg-white rounded drop-shadow">
@@ -21,8 +19,7 @@ export default function Card(card: ICard) {
           ? card.tags.map((tag) => (
               <span
                 className={`bg-${
-                  data.tags.find((tagItem: ITag) => tagItem.title === tag)
-                    ?.color
+                  tagData.find((tagItem: ITag) => tagItem.title === tag)?.color
                 } font-montserrat text-xs px-1.5 py-0.5 rounded-full w-fit`}
               >{`#${tag}`}</span>
             ))

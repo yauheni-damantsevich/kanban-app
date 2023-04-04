@@ -1,4 +1,4 @@
-export interface ICard {
+export interface ICard extends ITagData {
   id: string;
   title: string;
   description: string;
@@ -22,4 +22,14 @@ export interface IComment {
   content: string;
   author: string;
   date: string;
+}
+
+export interface ITagData {
+  tagData: ITag[];
+}
+
+export interface ITag {
+  id: number;
+  title: string;
+  color: string;
 }
