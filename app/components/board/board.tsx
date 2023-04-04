@@ -15,6 +15,12 @@ export default function Board() {
   const cardData = [...localData.cards];
   const tagData = [...localData.tags];
 
+  function columnCount(columnName: string) {
+    return cardData.filter((card: ICard) => card.status === columnName).length;
+  }
+  function rowCount(rowName: string) {
+    return cardData.filter((card: ICard) => card.state === rowName).length;
+  }
   return localData ? (
     <table className="w-full border border-solid border-gray-400	">
       <thead>
@@ -28,7 +34,10 @@ export default function Board() {
                 className="border border-solid border-gray-400 text-sm font-montserrat font-normal"
                 key={column.id}
               >
-                <TableHeader title={column.title} />
+                <TableHeader
+                  title={column.title}
+                  count={columnCount(column.title)}
+                />
               </th>
             ))}
         </tr>
@@ -36,7 +45,10 @@ export default function Board() {
       <tbody>
         <tr>
           <td className="border border-solid border-gray-400 text-sm font-montserrat font-normal align-top">
-            <TableHeaderRow title={rowData[0].title} />
+            <TableHeaderRow
+              title={rowData[0].title}
+              count={rowCount(rowData[0].title)}
+            />
           </td>
           {rowData.length > 0 &&
             rowData.map((row: { id: string; title: string }, index: number) => {
