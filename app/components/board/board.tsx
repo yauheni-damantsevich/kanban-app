@@ -42,6 +42,7 @@ export default function Board() {
             rowData.map((row: { id: string; title: string }, index: number) => {
               return (
                 <td
+                  key={`${rowData[0].title}-${columnData[index]?.title}`}
                   id={`${rowData[0].title}-${columnData[index]?.title}`}
                   className="bg-gray-100 border border-solid border-gray-400 text-sm font-montserrat font-normal"
                 >
@@ -50,6 +51,7 @@ export default function Board() {
                         card.state === rowData[0].title &&
                         card.status === columnData[index]?.title ? (
                           <Card
+                            key={card.id}
                             id={card.id}
                             title={card.title}
                             description={card.description}
