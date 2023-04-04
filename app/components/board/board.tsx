@@ -35,7 +35,7 @@ export default function Board() {
       </thead>
       <tbody>
         <tr>
-          <td className="border border-solid border-gray-400 text-sm font-montserrat font-normal">
+          <td className="border border-solid border-gray-400 text-sm font-montserrat font-normal align-top">
             <TableHeaderRow title={rowData[0].title} />
           </td>
           {rowData.length > 0 &&
